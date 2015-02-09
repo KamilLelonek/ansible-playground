@@ -13,7 +13,8 @@
     - { role: ../roles/nodejs, tags: ['node']  }
     - {
         role:         ../roles/github,
-        user_ssh_key: ../files/ssh-keys/id_rsa
+        user_ssh_key: ../files/ssh-keys/id_rsa,
+        tags:         ['github']
       }
     - {
         role:            ../../roles/nginx-domain,
