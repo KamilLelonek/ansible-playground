@@ -21,6 +21,5 @@
         role:      ../roles/nginx-domain,
         tags:      ['domain'],
         subdomain: api,
-        kind:      server,
-        port:      3000
+        kind:      server
       }
