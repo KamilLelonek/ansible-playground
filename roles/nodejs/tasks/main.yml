@@ -1,0 +1,4 @@
+---
+- include: install_packages.yml
+- include: download_node.yml
+- include: add_node_to_env.yml

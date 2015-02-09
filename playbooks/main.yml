@@ -1,0 +1,12 @@
+- hosts:        all
+  gather_facts: no
+  sudo:         yes
+  roles:
+    - { role: ../roles/utils,        tags: ['common', 'utils']    }
+    - { role: ../roles/swap,         tags: ['common', 'swap']     }
+    - { role: ../roles/nginx-server, tags: ['common', 'nginx']    }
+    - { role: ../roles/postgres,     tags: ['common', 'postgres'] }
+    - { role: ../roles/redis,        tags: ['common', 'redis']    }
+
+- include: production.yml tags=production
+- include: staging.yml    tags=staging

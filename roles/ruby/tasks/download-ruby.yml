@@ -1,0 +1,11 @@
+---
+- name: download ruby source
+  get_url:
+    url:  "{{ ruby_url }}"
+    dest: /tmp
+
+- name: extract ruby
+  unarchive:
+    src:  /tmp/{{ ruby_archive }}
+    dest: "{{ user_home }}"
+    copy: false

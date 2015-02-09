@@ -1,0 +1,8 @@
+---
+- name:  set cache pressure
+  shell: sysctl vm.vfs_cache_pressure={{ cache_pressure }}
+
+- name: enable cache pressure
+  lineinfile:
+    dest: /etc/sysctl.conf
+    line: vm.vfs_cache_pressure={{ cache_pressure }}

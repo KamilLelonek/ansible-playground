@@ -1,0 +1,3 @@
+---
+postgres_number:  "{{ postgres_version | regex_replace('\\.', '') }}"
+postgres_repo:    http://yum.postgresql.org/{{ postgres_version }}/redhat/rhel-7-x86_64/pgdg-centos{{ postgres_number }}-{{ postgres_version }}-1.noarch.rpm

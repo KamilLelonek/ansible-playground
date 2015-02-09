@@ -1,0 +1,24 @@
+---
+- hosts:        all
+  gather_facts: no
+  sudo:         yes
+  vars:
+    user_name: website
+  vars_files:
+    - ../vars/developers.yml
+    - ../vars/domains.yml
+  roles:
+    - { role: ../roles/users,  tags: ['users'] }
+    - { role: ../roles/ruby,   tags: ['ruby']  }
+    - { role: ../roles/nodejs, tags: ['node']  }
+    - {
+        role:         ../roles/github,
+        user_ssh_key: ../files/ssh-keys/id_rsa
+      }
+    - {
+        role:            ../../roles/nginx-domain,
+        tags:            ['domain'],
+        subdomain:       website,
+        kind:            html,
+        prerender_token: ''
+      }

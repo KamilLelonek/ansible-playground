@@ -1,0 +1,5 @@
+---
+nodejs_version_tag: 'v0.10.36'
+nodejs_file_name:   'node-{{ nodejs_version_tag }}-linux-x64.tar.gz'
+nodejs_base_url:    'http://nodejs.org/dist/{{ nodejs_version_tag }}/'
+nodejs_tarball_url: '{{ nodejs_base_url }}{{ nodejs_file_name }}'

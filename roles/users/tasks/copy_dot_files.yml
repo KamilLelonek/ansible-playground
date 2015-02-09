@@ -1,0 +1,8 @@
+---
+- name: copy dot files
+  copy:
+    src:  "{{ item }}"
+    dest: /home/{{ user_name }}
+  with_items:
+    - .vimrc
+    - .bash_aliases

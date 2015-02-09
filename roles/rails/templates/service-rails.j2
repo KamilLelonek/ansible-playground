@@ -1,0 +1,12 @@
+[Unit]
+Description=Rails {{ user_name }}
+After=network-online.target
+
+[Service]
+Environment="RAILS_ENV=production"
+User={{ user_name }}
+WorkingDirectory=/home/{{ user_name }}/app/current/
+ExecStart=/bin/bash -lc 'bundle exec puma -C /home/{{ user_name }}/app/shared/puma.rb'
+
+[Install]
+WantedBy=multi-user.target

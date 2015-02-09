@@ -1,0 +1,6 @@
+---
+- name: start mongodb
+  service:
+    name:    mongod
+    state:   started
+    enabled: yes

@@ -1,0 +1,5 @@
+---
+- name: template rails service
+  template:
+    src:  service-rails.j2
+    dest: /etc/systemd/system/{{ user_name }}.service

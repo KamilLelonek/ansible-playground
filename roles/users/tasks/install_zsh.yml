@@ -1,0 +1,22 @@
+---
+- name: install zsh package
+  yum:  name=zsh
+
+- name:     check for oh-my-zsh installation
+  status:   dir_path=/home/{{ user_name }}/.oh-my-zsh
+  register: zsh_installation
+
+- name:  clone ohmyzsh repo
+  git:
+    repo: git://github.com/robbyrussell/oh-my-zsh.git
+    dest: /home/{{ user_name }}/.oh-my-zsh
+    accept_hostkey: yes
+  when: not zsh_installation.exists
+
+- name: copy .zshrc
+  copy:
+    src:  .zshrc
+    dest: /home/{{ user_name }}
+
+- name: set zsh as default shell
+  user: name={{ user_name }} shell=/bin/zsh

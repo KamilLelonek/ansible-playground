@@ -1,0 +1,10 @@
+---
+- name: install common packages
+  yum: name={{ item }}
+  with_items:
+    - postgresql{{ postgres_number }}
+    - postgresql{{ postgres_number }}-libs
+    - postgresql{{ postgres_number }}-server
+    - postgresql{{ postgres_number }}-contrib
+    - postgresql{{ postgres_number }}-devel
+    - python-psycopg2

@@ -1,0 +1,25 @@
+---
+- hosts:        all
+  gather_facts: no
+  sudo:         yes
+  vars:
+    user_name: api
+  vars_files:
+    - ../vars/developers.yml
+    - ../vars/domains.yml
+  roles:
+    - { role: ../roles/users,   tags: ['users']   }
+    - { role: ../roles/ruby,    tags: ['ruby']    }
+    - { role: ../roles/rails,   tags: ['rails']   }
+    - { role: ../roles/sidekiq, tags: ['sidekiq'] }
+    - {
+        role:         ../roles/github,
+        user_ssh_key: ../files/ssh-keys/id_rsa
+      }
+    - {
+        role:      ../roles/nginx-domain,
+        tags:      ['domain'],
+        subdomain: api,
+        kind:      server,
+        port:      3000
+      }

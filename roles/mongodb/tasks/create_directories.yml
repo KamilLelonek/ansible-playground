@@ -1,0 +1,6 @@
+---
+- name: create db directory
+  file:
+    path:  /data/db
+    state: directory
+  notify: start mongodb

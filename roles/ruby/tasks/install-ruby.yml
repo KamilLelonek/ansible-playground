@@ -1,0 +1,29 @@
+---
+- name: configure ruby
+  command: ./configure --prefix={{ ruby_path }}
+  args:
+    chdir:   '{{ tmp_ruby_path }}'
+    creates: Makefile
+
+- name:    compile ruby
+  command: make
+  args:
+    chdir:   '{{ tmp_ruby_path }}'
+    creates: ruby
+
+- name:    install ruby
+  command: make install
+  args:
+    chdir:   '{{ tmp_ruby_path }}'
+    creates: '{{ ruby_path }}'
+
+- name: add ruby to path
+  lineinfile:
+    dest:  '{{ user_home }}/.bash_profile'
+    state: present
+    line:  'export PATH={{ ruby_path }}/bin:$PATH'
+
+- name: remove installation leftovers
+  file:
+    name:  '{{ tmp_ruby_path }}'
+    state: absent

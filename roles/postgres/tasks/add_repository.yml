@@ -1,0 +1,13 @@
+---
+- name: add postgres repository
+  yum:  name={{ postgres_repo }}
+
+- name: exclude old postgres repositories
+  ini_file:
+    dest:    /etc/yum.repos.d/CentOS-Base.repo
+    section: '{{ item }}'
+    option:  exclude
+    value:   postgresql*
+  with_items:
+    - base
+    - updates

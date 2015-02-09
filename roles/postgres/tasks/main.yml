@@ -1,0 +1,6 @@
+---
+- include: add_repository.yml
+- include: install_packages.yml
+- include: init_and_enable.yml
+- include: create_user_and_db.yml
+- include: setup_permissions_config.yml

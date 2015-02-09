@@ -1,0 +1,6 @@
+---
+swap_size:       4G
+swappiness_size: 10
+cache_pressure:  50
+swap_file_size:  2097152
+block_size:      1024

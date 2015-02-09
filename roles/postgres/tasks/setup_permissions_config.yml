@@ -1,0 +1,3 @@
+- name:   copy pg_hba.conf
+  copy:   src=pg_hba.conf dest=/var/lib/pgsql/{{ postgres_version }}/data/
+  notify: restart postgres

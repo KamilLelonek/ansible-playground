@@ -1,0 +1,9 @@
+---
+ruby_version:  "{{ ruby_name | replace('ruby-', '') | truncate(3, True, '') }}"
+
+ruby_archive:  '{{ ruby_name }}.tar.xz'
+ruby_url:      http://ftp.ruby-lang.org/pub/ruby/{{ ruby_version }}/{{ ruby_archive }}
+
+user_home:     /home/{{ user_name }}
+tmp_ruby_path: '{{ user_home }}/{{ ruby_name }}'
+ruby_path:     '{{ user_home }}/ruby'

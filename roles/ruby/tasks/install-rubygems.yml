@@ -1,0 +1,18 @@
+- name: create .bundle directory
+  file:
+    path: '{{ user_home }}/.bundle'
+    state: directory
+
+- name: configure bundler
+  template:
+    src:  config.j2
+    dest: '{{ user_home }}/.bundle/config'
+
+- name: do not download documentation with gems
+  copy: src=.gemrc dest={{ user_home }}
+
+- name:    make user ruby owner
+  command: chown -R {{ user_name }} {{ ruby_path }}
+
+- name:    install bundler
+  command: /home/{{ user_name }}/ruby/bin/gem install bundler

@@ -1,0 +1,5 @@
+---
+- include: install-packages.yml
+- include: download-ruby.yml
+- include: install-ruby.yml
+- include: install-rubygems.yml

@@ -1,0 +1,4 @@
+---
+- include: add_domain.yml
+  vars:
+    webserver_name: "{{ [subdomain, domain] | reject('none') | join('.') }}"

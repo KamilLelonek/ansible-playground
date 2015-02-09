@@ -1,0 +1,25 @@
+---
+- name:  create swap file
+  shell: fallocate -l {{ swap_size }} /swapfile
+
+- name: configure permissions
+  file:
+    path: /swapfile
+    mode: 0600
+
+- name:  set up the swap space
+  shell: mkswap /swapfile
+
+- name:          use swap space
+  shell:         swapon /swapfile
+  register:      result
+  ignore_errors: yes
+
+- name:  use swap space
+  shell: /bin/dd if=/dev/zero of=/swapfile bs={{ block_size }} count={{ swap_file_size }}
+  when:  result|failed
+
+- name: enable swapfile
+  lineinfile:
+    dest: /etc/fstab
+    line: '/swapfile   swap    swap    sw  0   0'

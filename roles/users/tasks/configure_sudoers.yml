@@ -1,0 +1,6 @@
+---
+- name: configure sudoers
+  lineinfile:
+    dest:        /etc/sudoers
+    line:        "%{{ group_name }} ALL=(ALL:ALL) NOPASSWD: ALL"
+    insertafter: "^%wheel"

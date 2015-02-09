@@ -1,0 +1,7 @@
+---
+- name:     check for ruby installation
+  status:   dir_path=/home/{{ user_name }}/ruby
+  register: ruby
+
+- include: download-and-install.yml
+  when:    not ruby.exists

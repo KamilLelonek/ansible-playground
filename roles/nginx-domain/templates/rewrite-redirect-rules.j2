@@ -1,0 +1,10 @@
+server {
+  listen 80{% if not subdomain %} default_server{% endif %};
+  server_name www.{{ webserver_name }};
+
+{% if ssl | default(false) %}
+  return 301 https://{{ webserver_name }}$request_uri;
+{% else %}
+  return 301 http://{{ webserver_name }}$request_uri;
+{% endif %}
+}

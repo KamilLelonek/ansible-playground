@@ -1,0 +1,14 @@
+---
+- name:     check for postgres dir
+  status:   dir_path=/var/lib/pgsql/{{ postgres_version }}/data
+  register: pg_data_dir
+
+- name:    init postgresql
+  command: /usr/pgsql-{{ postgres_version }}/bin/postgresql{{ postgres_number }}-setup initdb
+  when:    not pg_data_dir.exists or pg_data_dir.empty
+
+- name: start and enable postgresql
+  service:
+    name:    postgresql-{{ postgres_version }}
+    state:   started
+    enabled: yes

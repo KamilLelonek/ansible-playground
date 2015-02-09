@@ -1,0 +1,12 @@
+---
+- status:   dir_path=/swapfile
+  register: swapfile
+
+- include: setup_swap_file.yml
+  when: not swapfile.exists
+
+- include: setup_swappiness.yml
+  when: not swapfile.exists
+
+- include: setup_cache_pressure.yml
+  when: not swapfile.exists

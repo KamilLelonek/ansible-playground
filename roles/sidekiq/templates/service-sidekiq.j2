@@ -1,0 +1,12 @@
+[Unit]
+Description=Sidekiq {{ user_name }}
+After=network-online.target
+
+[Service]
+Environment="RAILS_ENV=production"
+User={{ user_name }}
+WorkingDirectory=/home/{{ user_name }}/app/current/
+ExecStart=/bin/bash -lc 'bundle exec sidekiq -C /home/{{ user_name }}/app/current/config/sidekiq.yml --environment production'
+
+[Install]
+WantedBy=multi-user.target

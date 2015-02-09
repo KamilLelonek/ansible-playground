@@ -1,0 +1,8 @@
+---
+- name: install vim package
+  yum:  name=vim
+
+- name: configure vim
+  copy:
+    src:  .vimrc
+    dest: /root

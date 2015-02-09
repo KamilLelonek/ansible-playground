@@ -1,0 +1,6 @@
+---
+- name: install nodejs requirements
+  yum: name={{item}}
+  with_items:
+    - gcc-c++
+    - gcc

@@ -1,0 +1,12 @@
+---
+- name: create user
+  user:
+    name:   "{{ user_name }}"
+    group:  "{{ group_name }}"
+    system: yes
+
+- name: add permissions
+  file:
+    path:    /home/{{ user_name }}
+    mode:    0755
+    recurse: yes

@@ -1,0 +1,5 @@
+---
+- name: add node and npm executables to environmental variables
+  lineinfile:
+    dest: /home/{{ user_name }}/.bash_profile
+    line: export PATH=/home/{{ user_name }}/nodejs/bin:$PATH

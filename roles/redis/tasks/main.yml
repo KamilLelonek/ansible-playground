@@ -1,0 +1,4 @@
+---
+- name:   install common packages
+  yum:    name=redis
+  notify: start redis

@@ -1,0 +1,11 @@
+{% if ssl | default(false) %}
+  listen 443 ssl;
+  ssl_certificate /etc/ssl/certs/{{ user_name }}.crt;
+  ssl_certificate_key /etc/ssl/private/{{ user_name }}.key;
+  ssl_protocols SSLv3 TLSv1;
+  ssl_ciphers ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM;
+{% else %}
+  listen 80;
+{% endif %}
+
+  server_name {{ webserver_name }};

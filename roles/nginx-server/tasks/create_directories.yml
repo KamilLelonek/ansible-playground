@@ -1,0 +1,14 @@
+---
+- name: create nginx sites directory
+  file: path=/etc/nginx/{{ item }} state=directory owner=root mode=0755
+  with_items:
+    - 'sites-available'
+    - 'sites-enabled'
+
+- name: create SSL directories
+  file:
+    dest: '{{ item }}'
+    state: directory
+  with_items:
+    - /etc/ssl/certs
+    - /etc/ssl/private

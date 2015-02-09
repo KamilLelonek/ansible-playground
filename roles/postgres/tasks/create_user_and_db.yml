@@ -1,0 +1,12 @@
+---
+- name:      create database for root user in postgres database
+  sudo_user: postgres
+  postgresql_db: name=root
+
+- name:      create root user in postgres database
+  sudo_user: postgres
+  postgresql_user:
+    db:   root
+    name: root
+    role_attr_flags: CREATEDB,LOGIN,SUPERUSER
+  notify: restart postgres

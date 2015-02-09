@@ -1,0 +1,8 @@
+---
+- name:  set swappines
+  shell: sysctl vm.swappiness={{ swappiness_size }}
+
+- name: enable swappines
+  lineinfile:
+    dest: /etc/sysctl.conf
+    line: vm.swappiness={{ swappiness_size }}
