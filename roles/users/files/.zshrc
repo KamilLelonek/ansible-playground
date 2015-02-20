@@ -12,3 +12,5 @@ export PATH=/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bi
 
 source .bash_profile
 source .bash_aliases
+
+unsetopt nomatch
