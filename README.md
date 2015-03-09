@@ -2,10 +2,20 @@
 
 This project consists of automation infrastructure setup for rails-api with separate frontend application.
 
-## Installation
+## Prerequisites
 
-  1. Make sure you have [virutalbox](https://www.virtualbox.org/wiki/Downloads) installed.
-  2. Visit [vagrant download page](https://www.vagrantup.com/downloads) and install particular binary for your OS.
+Make sure you have installed the following things:
+
+- Homebrew:
+
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+- Brew Cask - `brew install caskroom/cask/brew-cask`
+- Virtual Box - `brew cask install virtualbox`
+- Vagrant - `brew cask install vagrant`
+- Ansible - `brew install ansible`
 
 ## Usage
 
