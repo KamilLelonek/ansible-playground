@@ -15,4 +15,4 @@
   command: chown -R {{ user_name }} {{ ruby_path }}
 
 - name:    install bundler
-  command: /home/{{ user_name }}/ruby/bin/gem install bundler
+  command: '{{ user_home }}/ruby/bin/gem install bundler'
