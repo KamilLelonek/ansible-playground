@@ -8,5 +8,5 @@
     - { role: ../roles/postgres,     tags: ['common', 'postgres'] }
     - { role: ../roles/redis,        tags: ['common', 'redis']    }
 
-- include: production.yml tags=production
-- include: staging.yml    tags=staging
+- include: api.yml     tags=api
+- include: website.yml tags=website
