@@ -22,4 +22,5 @@
         subdomain:       website,
         kind:            html,
         prerender_token: ''
+        tags:            ['nginx']
       }

@@ -8,6 +8,7 @@
     - { role: ../roles/nginx-server, tags: ['common', 'nginx']    }
     - { role: ../roles/postgres,     tags: ['common', 'postgres'] }
     - { role: ../roles/redis,        tags: ['common', 'redis']    }
+    - { role: ../roles/mongodb,      tags: ['common', 'mongo']    }
 
 - include: api.yml     tags=api
 - include: website.yml tags=website
