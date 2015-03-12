@@ -21,6 +21,6 @@
         tags:            ['domain'],
         subdomain:       website,
         kind:            html,
-        prerender_token: ''
+        prerender_token: '',
         tags:            ['nginx']
       }
