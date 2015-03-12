@@ -1,0 +1,5 @@
+---
+vertx_name:    vert.x-{{ vertx_version }}
+vertx_archive: '{{ vertx_name }}.tar.gz'
+vertx_url:     http://dl.bintray.com/vertx/downloads/{{ vertx_archive }}
+vertex_dir:    /opt/vertx

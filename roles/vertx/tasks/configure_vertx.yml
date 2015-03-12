@@ -1,0 +1,15 @@
+---
+- name: set environmental variable
+  template:
+    src:  vertx.j2
+    dest: /etc/profile.d/vertx.sh
+
+- name: configure vertx
+  replace:
+    dest: '{{ vertex_dir }}/conf/cluster.xml'
+    regexp:  '{{ item.regexp }}'
+    replace: '{{ item.replacement }}'
+  with_items:
+    - { regexp: '<interface>192.168.1.28</interface>', replacement: '<interface>192.168.1.144</interface>' }
+    - { regexp: '<tcp-ip enabled="false">',            replacement: '<tcp-ip enabled="true">'              }
+    - { regexp: '<multicast enabled="true">',          replacement: '<multicast enabled="false">'          }

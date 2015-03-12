@@ -1,0 +1,10 @@
+---
+- name:     register vertx archive
+  status:   dir_path=/tmp/{{ vertx_archive }}
+  register: status_of_vertx_archive
+
+- name: download vertx source
+  get_url:
+    url:  '{{ vertx_url }}'
+    dest: /tmp
+  when: status_of_vertx_archive.exists == false

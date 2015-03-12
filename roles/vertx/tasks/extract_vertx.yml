@@ -1,0 +1,11 @@
+---
+- name: create vertex directory
+  file:
+    name:  '{{ vertex_dir }}'
+    state: directory
+
+- name: extract vertx archive
+  shell: >
+    tar --strip-components 1 -xzvf
+    /tmp/{{ vertx_archive }}
+    -C {{ vertex_dir }}

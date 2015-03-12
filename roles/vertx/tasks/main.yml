@@ -1,0 +1,5 @@
+---
+- include: install_dependencies.yml
+- include: download_vertx.yml
+- include: extract_vertx.yml
+- include: configure_vertx.yml
