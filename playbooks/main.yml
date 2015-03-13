@@ -2,14 +2,17 @@
 - hosts:        all
   gather_facts: no
   sudo:         yes
+  vars_files:
+    - ../vars/developers.yml
   roles:
-    - { role: ../roles/utils,        tags: ['common', 'utils']    }
-    - { role: ../roles/swap,         tags: ['common', 'swap']     }
-    - { role: ../roles/nginx-server, tags: ['common', 'nginx']    }
-    - { role: ../roles/postgres,     tags: ['common', 'postgres'] }
-    - { role: ../roles/redis,        tags: ['common', 'redis']    }
-    - { role: ../roles/mongodb,      tags: ['common', 'mongodb']  }
-    - { role: ../roles/vertx,        tags: ['common', 'vertx']    }
+    - { role: ../roles/utils,             tags: ['common', 'utils']    }
+    - { role: ../roles/swap,              tags: ['common', 'swap']     }
+    - { role: ../roles/nginx-server,      tags: ['common', 'nginx']    }
+    - { role: ../roles/postgres,          tags: ['common', 'postgres'] }
+    - { role: ../roles/redis,             tags: ['common', 'redis']    }
+    - { role: ../roles/mongodb,           tags: ['common', 'mongodb']  }
+    - { role: ../roles/vertx,             tags: ['common', 'vertx']    }
+    - { role: ../roles/authorized-access, tags: ['common', 'auth']     }
 
 - include: api.yml     tags=api
 - include: website.yml tags=website

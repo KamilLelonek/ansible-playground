@@ -2,6 +2,6 @@
 - include: create_group.yml
 - include: configure_sudoers.yml
 - include: create_user_with_permissions.yml
-- include: configure_ssh_keys.yml
 - include: install_zsh.yml
 - include: copy_dot_files.yml
+- include: ../../authorized-access/tasks/main.yml
