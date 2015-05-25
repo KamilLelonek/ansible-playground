@@ -1,7 +1,6 @@
 ---
-- hosts:        all
-  gather_facts: no
-  sudo:         yes
+- hosts: all
+  sudo:  yes
   vars_files:
     - ../vars/developers.yml
   roles:
