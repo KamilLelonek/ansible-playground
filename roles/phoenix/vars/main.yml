@@ -1,0 +1,5 @@
+---
+user_home:        /home/{{ user_name }}
+elixir_url:       https://github.com/elixir-lang/elixir/releases/download/v{{ elixir_version }}/Precompiled.zip
+elixir_directory: "{{ user_home }}/elixir"
+phoenix_url:      https://github.com/phoenixframework/phoenix/releases/download/v{{ phoenix_version }}/phoenix_new-{{ phoenix_version }}.ez

@@ -1,0 +1,10 @@
+---
+- name:  install the Hex package manager
+  shell: mix local.hex | echo y
+  environment:
+    PATH: "{{ ansible_env.PATH }}:{{ elixir_directory }}/bin"
+
+- name:  install Phoenix Framework
+  shell: mix archive.install {{ phoenix_url }} | echo y
+  environment:
+    PATH: "{{ ansible_env.PATH }}:{{ elixir_directory }}/bin"

@@ -1,0 +1,4 @@
+---
+- include: install_erlang.yml
+- include: install_elixir.yml
+- include: install_phoenix.yml
