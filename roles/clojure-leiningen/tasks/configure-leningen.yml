@@ -1,0 +1,10 @@
+---
+- name:    download clojure libraries
+  command: lein
+  environment:
+    LEIN_ROOT: true
+
+- name: set environmental variable
+  copy:
+    src:  leiningen.sh
+    dest: /etc/profile.d/

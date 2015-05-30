@@ -1,0 +1,10 @@
+---
+- name: find user home directory
+  set_fact:
+    dot_lein_directory: "{{ '/home/' + user_name if user_name is defined else '/root' }}/.lein/"
+
+- name: create directory for leiningen plugins
+  file: name={{ dot_lein_directory }} state=directory
+
+- name: copy server template
+  template: src=profiles.clj dest={{ dot_lein_directory }}

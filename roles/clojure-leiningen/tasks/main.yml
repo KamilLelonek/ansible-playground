@@ -1,0 +1,4 @@
+---
+- include: install-leiningen.yml
+- include: install-lein-exec.yml
+- include: configure-leningen.yml

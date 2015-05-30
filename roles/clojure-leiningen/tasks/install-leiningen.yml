@@ -1,0 +1,14 @@
+---
+- name: find user bin directory
+  set_fact:
+    user_bin_dir: "{{ '/home/' + user_name if user_name is defined else '/usr' }}/bin/"
+
+- name: download leiningen
+  get_url:
+    url:  "{{ leiningen_url }}"
+    dest: "{{ user_bin_dir }}"
+
+- name: add executable permission
+  file:
+    path: "{{ user_bin_dir }}/lein"
+    mode: "a+x"
