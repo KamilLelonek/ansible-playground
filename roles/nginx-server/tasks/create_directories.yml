@@ -5,10 +5,22 @@
     - 'sites-available'
     - 'sites-enabled'
 
+- name:     check for SSL directories
+  status:   dir_path=/etc/ssl/certs
+  register: certs_dir
+
 - name: create SSL directories
   file:
-    dest: '{{ item }}'
+    dest: /etc/ssl/certs
     state: directory
-  with_items:
-    - /etc/ssl/certs
-    - /etc/ssl/private
+  when: not certs_dir.exists
+
+- name:     check for SSL directories
+  status:   dir_path=/etc/ssl/private
+  register: private_dir
+
+- name: create SSL directories
+  file:
+    dest: /etc/ssl/private
+    state: directory
+  when: not private_dir.exists
