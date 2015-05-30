@@ -8,6 +8,6 @@
 
 - name: add ssh developers keys
   authorized_key:
-    user: "{{ user_name }}"
+    user: "{{ user_name | default('root') }}"
     key:  "{{ lookup('file', '/tmp/' + item) }}"
   with_items: developers
