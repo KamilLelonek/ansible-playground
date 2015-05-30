@@ -13,7 +13,6 @@
     - { role: ../roles/vertx,             tags: ['common', 'vertx']     }
     - { role: ../roles/authorized-access, tags: ['common', 'auth']      }
     - { role: ../roles/clojure-leiningen, tags: ['common', 'leiningen'] }
-    - { role: ../roles/phoenix,           tags: ['common', 'phoenix']   }
 
 - include: api.yml     tags=api
 - include: website.yml tags=website
