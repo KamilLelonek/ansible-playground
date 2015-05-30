@@ -4,14 +4,16 @@
   vars_files:
     - ../vars/developers.yml
   roles:
-    - { role: ../roles/utils,             tags: ['common', 'utils']    }
-    - { role: ../roles/swap,              tags: ['common', 'swap']     }
-    - { role: ../roles/nginx-server,      tags: ['common', 'nginx']    }
-    - { role: ../roles/postgres,          tags: ['common', 'postgres'] }
-    - { role: ../roles/redis,             tags: ['common', 'redis']    }
-    - { role: ../roles/mongodb,           tags: ['common', 'mongodb']  }
-    - { role: ../roles/vertx,             tags: ['common', 'vertx']    }
-    - { role: ../roles/authorized-access, tags: ['common', 'auth']     }
+    - { role: ../roles/utils,             tags: ['common', 'utils']     }
+    - { role: ../roles/swap,              tags: ['common', 'swap']      }
+    - { role: ../roles/nginx-server,      tags: ['common', 'nginx']     }
+    - { role: ../roles/postgres,          tags: ['common', 'postgres']  }
+    - { role: ../roles/redis,             tags: ['common', 'redis']     }
+    - { role: ../roles/mongodb,           tags: ['common', 'mongodb']   }
+    - { role: ../roles/vertx,             tags: ['common', 'vertx']     }
+    - { role: ../roles/authorized-access, tags: ['common', 'auth']      }
+    - { role: ../roles/clojure-leiningen, tags: ['common', 'leiningen'] }
+    - { role: ../roles/phoenix,           tags: ['common', 'phoenix']   }
 
 - include: api.yml     tags=api
 - include: website.yml tags=website
