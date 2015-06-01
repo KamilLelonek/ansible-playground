@@ -6,5 +6,5 @@
 - name: create directory for leiningen plugins
   file: name={{ dot_lein_directory }} state=directory
 
-- name: copy server template
+- name: create leiningen config
   template: src=profiles.clj dest={{ dot_lein_directory }}
