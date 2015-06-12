@@ -1,0 +1,11 @@
+- name: Install "svgo" node.js package
+  npm:
+    name:       svgo
+    path:       "{{ node_directory }}/lib/node_modules/npm"
+    executable: "{{ node_directory }}/bin/npm"
+
+- name: Link executable to image_optim directory
+  file:
+    src:   "{{ node_directory }}/lib/node_modules/npm/node_modules/svgo/bin/svgo"
+    dest:  "{{ image_optim_directory }}/svgo"
+    state: link

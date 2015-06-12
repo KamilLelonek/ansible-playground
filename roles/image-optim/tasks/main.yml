@@ -1,5 +1,6 @@
 ---
 - include: intall-basic-packages.yml
-- include: install-npm-dependencies.yml
+- include: create-image_optim-directory.yml
+- include: install-svgo.yml
 - include: install-png-crush.yml
 - include: install-png-out.yml

@@ -1,0 +1,3 @@
+---
+- name: create directory for image_optim
+  file: name={{ image_optim_directory }} state=directory

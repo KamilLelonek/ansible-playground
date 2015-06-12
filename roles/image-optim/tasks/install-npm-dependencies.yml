@@ -1,5 +1,0 @@
-- name: Install "svgo" node.js package
-  npm:
-    name:       svgo
-    path:       "{{ node_directory }}/lib/node_modules/npm"
-    executable: "{{ node_directory }}/bin/npm"

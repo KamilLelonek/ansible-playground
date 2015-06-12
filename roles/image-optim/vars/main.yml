@@ -3,5 +3,6 @@ pngout_url:       http://static.jonof.id.au/dl/kenutils/pngout-{{ pngout_version
 pngout_file_name: pngout.tar.gz
 pngout_name:      pngout
 
-home_directory: /home/{{ user_name }}
-node_directory: "{{ home_directory }}/nodejs"
+home_directory:        /home/{{ user_name }}
+node_directory:        "{{ home_directory }}/nodejs"
+image_optim_directory: "{{ home_directory }}/image_optim"
