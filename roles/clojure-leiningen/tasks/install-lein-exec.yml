@@ -1,5 +1,5 @@
 ---
-- name: find user home directory
+- name: set lein dot directory
   set_fact:
     dot_lein_directory: "{{ '/home/' + user_name if user_name is defined else '/root' }}/.lein/"
 
