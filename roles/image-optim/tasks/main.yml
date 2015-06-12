@@ -1,0 +1,5 @@
+---
+- include: intall-basic-packages.yml
+- include: install-npm-dependencies.yml
+- include: install-png-crush.yml
+- include: install-png-out.yml

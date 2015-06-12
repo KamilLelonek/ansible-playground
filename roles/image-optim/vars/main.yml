@@ -1,0 +1,7 @@
+---
+pngout_url:       http://static.jonof.id.au/dl/kenutils/pngout-{{ pngout_version }}-linux.tar.gz
+pngout_file_name: pngout.tar.gz
+pngout_name:      pngout
+
+home_directory: /home/{{ user_name }}
+node_directory: "{{ home_directory }}/nodejs"

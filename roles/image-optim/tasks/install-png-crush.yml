@@ -1,0 +1,6 @@
+---
+- name: add pngcrush repository
+  yum:  name=http://pkgs.repoforge.org/pngcrush/pngcrush-1.7.73-1.el6.rf.x86_64.rpm
+
+- name: install pngcrush package
+  yum:  name=pngcrush

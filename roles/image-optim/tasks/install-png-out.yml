@@ -1,0 +1,17 @@
+---
+- name: download pngout
+  get_url:
+    url:  "{{ pngout_url }}"
+    dest: /tmp/{{ pngout_file_name }}
+
+- name: extract pngout
+  unarchive:
+    src:  /tmp/{{ pngout_file_name }}
+    dest: /tmp
+    copy: false
+
+- name: create directory binaries
+  file: name={{ home_directory }}/bin state=directory
+
+- name:    copy pngout executable to binaries folder
+  command: mv /tmp/pngout-{{ pngout_version }}-linux/x86_64/pngout {{ home_directory }}/bin/

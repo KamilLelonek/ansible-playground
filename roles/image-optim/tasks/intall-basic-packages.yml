@@ -1,0 +1,12 @@
+- name: install image_optim packages
+  yum:  name={{ item }}
+  with_items:
+    - advancecomp
+    - gifsicle
+    - jhead
+    - libjpeg
+    - optipng
+    - pngquant
+    - libjpeg-turbo-utils
+    - libjpeg-turbo-devel
+    - jpegoptim
