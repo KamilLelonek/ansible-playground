@@ -1,2 +1,3 @@
 ---
 group_name: deployers
+user_home:  /home/{{ user_name }}

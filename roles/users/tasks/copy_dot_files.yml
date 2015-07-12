@@ -2,7 +2,7 @@
 - name: copy dot files
   copy:
     src:  "{{ item }}"
-    dest: /home/{{ user_name }}
+    dest: "{{ user_home }}"
   with_items:
     - .vimrc
     - .bash_aliases

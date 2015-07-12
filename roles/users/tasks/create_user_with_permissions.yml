@@ -7,6 +7,6 @@
 
 - name: add permissions
   file:
-    path:    /home/{{ user_name }}
+    path:    "{{ user_home }}"
     mode:    0755
     recurse: yes

@@ -4,4 +4,4 @@
 - include: create_user_with_permissions.yml
 - include: install_zsh.yml
 - include: copy_dot_files.yml
-- include: ../../authorized-access/tasks/main.yml
+- include: create_directories.yml
