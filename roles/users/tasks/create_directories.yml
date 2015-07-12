@@ -1,0 +1,9 @@
+---
+- name: create environmental directories included in PATH
+  file:
+    path:    "{{ item }}"
+    state:   directory
+    recurse: yes
+  with_items:
+    - "{{ user_home }}/bin"
+    - "{{ user_home }}/.local/bin"
