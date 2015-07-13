@@ -1,6 +1,12 @@
 ---
-- name: configure sudoers
+- name: configure passwd requirement
   lineinfile:
     dest:        /etc/sudoers
     line:        "%{{ group_name }} ALL=(ALL:ALL) NOPASSWD: ALL"
     insertafter: "^%wheel"
+
+- name: configure tty
+  lineinfile:
+    dest:   /etc/sudoers
+    line:   "# Defaults requiretty"
+    regexp: "Defaults requiretty"
