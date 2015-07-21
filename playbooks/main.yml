@@ -14,5 +14,5 @@
     - { role: ../roles/authorized-access, tags: ['common', 'auth']      }
     - { role: ../roles/clojure-leiningen, tags: ['common', 'leiningen'] }
 
-- include: api.yml     tags=api
-- include: website.yml tags=website
+- include: api.yml
+- include: website.yml
