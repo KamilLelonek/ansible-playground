@@ -7,9 +7,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = 'chef/centos-7.1'
 
   # DNS
-  config.dns.tld              = 'company'
-  config.vm.hostname          = 'example'
-  VagrantDNS::Config.auto_run = true
+  config.dns.tld     = 'company'
+  config.vm.hostname = 'example'
 
   # Networking
   config.vm.network :forwarded_port, guest: 80, host: 8080
