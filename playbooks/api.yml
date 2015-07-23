@@ -1,6 +1,7 @@
 ---
-- hosts: all
-  sudo:  yes
+- hosts:        all
+  gather_facts: yes
+  sudo:         yes
   vars:
     user_name: api
   vars_files:

@@ -1,16 +1,17 @@
 ---
-- hosts: all
-  sudo:  yes
+- hosts:        all
+  gather_facts: yes
+  sudo:         yes
   vars:
     user_name: website
   vars_files:
     - ../vars/developers.yml
     - ../vars/domains.yml
   roles:
-    - { role: ../roles/users,       tags: ['users'] }
-    - { role: ../roles/ruby,        tags: ['ruby']  }
-    - { role: ../roles/nodejs,      tags: ['node']  }
-    - { role: ../roles/image-optim, tags: ['image-optim']  }
+    - { role: ../roles/users,       tags: ['users']       }
+    - { role: ../roles/ruby,        tags: ['ruby']        }
+    - { role: ../roles/nodejs,      tags: ['node']        }
+    - { role: ../roles/image-optim, tags: ['image-optim'] }
     - {
         role:         ../roles/github,
         user_ssh_key: ../files/ssh-keys/id_rsa,
