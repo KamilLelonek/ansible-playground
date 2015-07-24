@@ -1,0 +1,11 @@
+---
+- name:     list all binaries
+  command:  ls {{ elixir_directory }}/bin
+  register: binaries
+
+- name: link elixir binaries to environmental directory
+  file:
+    src:   "{{ elixir_directory }}/bin/{{ item }}"
+    dest:  "{{ user_home }}/bin/{{ item }}"
+    state: link
+  with_items: "{{ binaries.stdout_lines }}"

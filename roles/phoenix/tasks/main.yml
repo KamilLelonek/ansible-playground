@@ -2,3 +2,4 @@
 - include: install_erlang.yml
 - include: install_elixir.yml
 - include: install_phoenix.yml
+- include: link_elixir_bin.yml
