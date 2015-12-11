@@ -1,0 +1,9 @@
+---
+- name: copy SSL certificates
+  copy:
+    src:  '{{ item.0 }}'
+    dest: '{{ item.1 }}'
+  with_together:
+    - ['{{ ssl_private_path }}',               '{{ ssl_public_path }}']
+    - ['/etc/ssl/private/{{ user_name }}.key', '/etc/ssl/certs/{{ user_name }}.crt']
+  when: ssl | default(false)

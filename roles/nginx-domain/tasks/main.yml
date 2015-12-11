@@ -2,3 +2,5 @@
 - include: add_domain.yml
   vars:
     webserver_name: "{{ [subdomain, domain] | reject('none') | join('.') }}"
+- include: create_directories.yml
+- include: copy_certificates.yml
