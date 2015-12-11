@@ -1,4 +1,5 @@
 ---
 - include: create_directories.yml
 - include: add_domain.yml
+- include: symlink_domains.yml
 - include: copy_certificates.yml
