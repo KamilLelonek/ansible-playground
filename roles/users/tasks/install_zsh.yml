@@ -3,6 +3,7 @@
   yum:  name={{ item }}
   with_items:
     - ruby
+    - git
     - zsh
 
 - name:     check for oh-my-zsh installation
