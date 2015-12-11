@@ -1,5 +1,8 @@
 ---
 - name: create directory for availabe sites-available
   file:
-    path:  /etc/nginx/sites-available
+    path:  "{{item}}"
     state: directory
+  with_items:
+   - /etc/nginx/sites-available
+   - /etc/nginx/sites-enabled
