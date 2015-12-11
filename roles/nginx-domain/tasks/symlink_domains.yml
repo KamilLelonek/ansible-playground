@@ -2,6 +2,6 @@
 - name: make symlink from sites-available to sites-enabled
   file:
     src:   /etc/nginx/sites-available/{{ webserver_name }}
-    dest:  /etc/nginx/sites-enabled/{{ webserver_name }}
+    dest:  /etc/nginx/sites-enabled/
     state: link
   notify: reload nginx
