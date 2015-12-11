@@ -1,6 +1,9 @@
----
-- name: install zsh package
-  yum:  name=zsh
+------
+- name: install common packages
+  yum:  name={{ item }}
+  with_items:
+    - ruby
+    - zsh
 
 - name:     check for oh-my-zsh installation
   status:   dir_path={{ user_home }}/.oh-my-zsh
