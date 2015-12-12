@@ -1,4 +1,4 @@
-------
+---
 - name: install common packages
   yum:  name={{ item }}
   with_items:
