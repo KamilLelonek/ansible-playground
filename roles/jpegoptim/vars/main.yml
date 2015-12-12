@@ -1,0 +1,6 @@
+optiping_url:           "http://pkgs.repoforge.org/optipng/optipng-{{ optipng_version }}.rf.x86_64.rpm"
+jpegoptim_url:          "http://www.kokkonen.net/tjko/src/{{ jpegoptim_archive_name }}"
+jpegoptim_file_name:    "jpegoptim-{{ jpegoptim_version }}"
+jpegoptim_archive_name: "{{ jpegoptim_file_name }}.tar.gz"
+jpegoptim_archive_path: "/tmp/{{ jpegoptim_archive_name }}"
+jpegoptim_directory:    "/tmp/{{ jpegoptim_file_name }}"

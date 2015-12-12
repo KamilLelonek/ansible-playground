@@ -1,0 +1,3 @@
+---
+- include: install_packages.yml
+- include: install_jpegoptim.yml

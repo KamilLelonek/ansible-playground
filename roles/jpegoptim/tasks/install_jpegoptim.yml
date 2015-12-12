@@ -1,0 +1,21 @@
+---
+- name: download jpegoptim
+  get_url:
+    url:  "{{ jpegoptim_url }}"
+    dest: "{{ jpegoptim_archive_path }}"
+
+- name: extract jpegoptim
+  unarchive:
+    src:  "{{ jpegoptim_archive_path }}"
+    dest: /tmp
+    copy: false
+
+- name:    configure jpegoptim
+  command: ./configure
+  args:
+    chdir: "{{ jpegoptim_directory }}"
+
+- name:  install jpegoptim
+  shell: make && make strip && make install
+  args:
+    chdir: "{{ jpegoptim_directory }}"

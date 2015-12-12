@@ -1,0 +1,16 @@
+---
+- name: install common packages
+  yum: name={{ item }}
+  with_items:
+   - gcc
+   - libpng
+   - libpng-devel
+   - libjpeg-turbo-devel
+   - gifsicle
+   - pngcrush
+   - p7zip
+   - lzip
+   - jhead
+
+- name: add optipng repo
+  yum:  name=http://pkgs.repoforge.org/optipng/optipng-0.6.4-1.el6.rf.x86_64.rpm
