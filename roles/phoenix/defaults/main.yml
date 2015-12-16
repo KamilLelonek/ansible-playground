@@ -1,4 +1,4 @@
 ---
 elixir_version:  1.1.1
-phoenix_version: 1.0.4
+phoenix_version: 1.1.0
 erlang_url:      http://packages.erlang-solutions.com/site/esl/esl-erlang/FLAVOUR_1_general/esl-erlang_18.1-1~centos~7_amd64.rpm
