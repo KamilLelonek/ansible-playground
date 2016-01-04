@@ -1,0 +1,5 @@
+---
+- debug: msg="Set particular permissions to protect SSH keys"
+- file: path={{ user_ssh_path }}/id_rsa     mode=0600
+- file: path={{ user_ssh_path }}/id_rsa.pub mode=0644
+- file: path={{ user_ssh_path }}            mode=0755

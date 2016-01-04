@@ -1,0 +1,5 @@
+---
+- name: add ssh developers keys
+  authorized_key:
+    user: "{{ user_name | default('root') }}"
+    key:  "{{ lookup('file', user_ssh_key + '.pub') }}"

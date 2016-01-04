@@ -1,13 +1,4 @@
 ---
-- name: add public ssh key for CI
-  copy:
-    src:  '{{ item }}'
-    dest: '/home/{{ user_name }}/.ssh/'
-  with_items:
-    - '{{ user_ssh_key }}.pub'
-    - '{{ user_ssh_key }}'
-
-- debug: msg="Set particular permissions to protect SSH keys"
-- file: path=/home/{{ user_name }}/.ssh/id_rsa     mode=0600
-- file: path=/home/{{ user_name }}/.ssh/id_rsa.pub mode=0600
-- file: path=/home/{{ user_name }}/.ssh            mode=0755
+- include: copy_ssh_key.yml
+- include: add_files_permissions.yml
+- include: authorize_user.yml

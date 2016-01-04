@@ -1,0 +1,2 @@
+---
+user_ssh_path: "/{{ 'home/' + user_name if user_name is defined else 'root' }}/.ssh"
