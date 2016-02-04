@@ -1,6 +1,3 @@
 ---
 - name: add Erlang Solutions repository
-  yum:  name={{ erlang_url }}
-
-- name:   install common packages
-  yum:    name=erlang
+  yum:  name={{ erlang_rpm_url }}
