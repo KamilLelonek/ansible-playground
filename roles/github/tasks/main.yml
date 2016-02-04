@@ -1,4 +1,5 @@
 ---
-- include: copy_ssh_key.yml
-- include: add_files_permissions.yml
-- include: authorize_user.yml
+- include: create-ssh-directory.yml
+- include: copy-ssh-keys.yml
+- include: add-files-permissions.yml
+- include: authorize-user.yml

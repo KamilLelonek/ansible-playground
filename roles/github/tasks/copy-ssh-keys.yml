@@ -1,0 +1,8 @@
+---
+- name: add public ssh key for CI
+  copy:
+    src:  "{{ item }}"
+    dest: "{{ user_ssh_path }}"
+  with_items:
+    - "{{ user_ssh_key }}.pub"
+    - "{{ user_ssh_key }}"

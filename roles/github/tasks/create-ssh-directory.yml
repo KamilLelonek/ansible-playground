@@ -1,0 +1,5 @@
+---
+- name: create SSH directory
+  file:
+    path:  "{{ user_ssh_path }}"
+    state: directory
