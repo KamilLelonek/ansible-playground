@@ -1,5 +1,5 @@
 ---
-nodejs_version_tag: '5.5.0'
-nodejs_file_name:   'node-v{{ nodejs_version_tag }}-linux-x64.tar.gz'
-nodejs_base_url:    'https://nodejs.org/download/release/v{{ nodejs_version_tag }}/'
-nodejs_tarball_url: '{{ nodejs_base_url }}{{ nodejs_file_name }}'
+nodejs_file_name:   node-v{{ nodejs_version_tag }}-linux-x64.tar.gz
+nodejs_tarball_url: https://nodejs.org/download/release/v{{ nodejs_version_tag }}/{{ nodejs_file_name }}
+nodejs_temp_dir:    /tmp/{{ nodejs_file_name }}
+nodejs_user_dir:    /home/{{ user_name }}/nodejs

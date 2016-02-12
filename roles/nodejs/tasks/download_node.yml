@@ -2,15 +2,15 @@
 - name: download nodejs {{ nodejs_version_tag }}
   get_url:
     url:  "{{ nodejs_tarball_url }}"
-    dest: "/tmp/{{ nodejs_file_name }}"
+    dest: "{{ nodejs_temp_dir }}"
 
 - name: create nodejs directory
   file:
-    path:  /home/{{ user_name }}/nodejs
+    path:  "{{ nodejs_user_dir }}"
     state: directory
 
 - name:  unpack nodejs {{ nodejs_version_tag }}
   shell: >
     tar --strip-components 1 -xzvf
-    /tmp/{{ nodejs_file_name }}
-    -C /home/{{ user_name }}/nodejs
+    {{ nodejs_temp_dir }}
+    -C {{ nodejs_user_dir }}
