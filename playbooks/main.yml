@@ -6,6 +6,7 @@
     - ../vars/developers.yml
   roles:
     - { role: ../roles/utils,             tags: ['common', 'utils']     }
+    - { role: ../roles/git,               tags: ['common', 'git']       }
     - { role: ../roles/swap,              tags: ['common', 'swap']      }
     - { role: ../roles/nginx-server,      tags: ['common', 'nginx']     }
     - { role: ../roles/postgres,          tags: ['common', 'postgres']  }

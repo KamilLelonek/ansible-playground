@@ -1,0 +1,11 @@
+---
+- name: download git source
+  get_url:
+    url:  "{{ git_url }}"
+    dest: /tmp
+
+- name: extract git archive
+  unarchive:
+    src:  /tmp/{{ git_archive }}
+    dest: /tmp
+    copy: false

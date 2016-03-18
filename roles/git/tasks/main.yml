@@ -1,0 +1,4 @@
+---
+- include: install-packages.yml
+- include: download-git.yml
+- include: install-git.yml

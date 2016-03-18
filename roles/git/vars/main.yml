@@ -1,0 +1,4 @@
+---
+git_dir:     "git-{{ git_version }}"
+git_archive: "{{ git_dir }}.tar.gz"
+git_url:     "https://github.com/git/git/archive/v{{ git_version }}.tar.gz"
