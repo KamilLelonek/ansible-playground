@@ -8,3 +8,5 @@
     - openssl-devel
     - perl-devel
     - zlib-devel
+    - autoconf
+    - gcc

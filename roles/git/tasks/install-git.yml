@@ -1,11 +1,11 @@
 ---
-- name:    install git
-  command: "{{ item }}"
+- name:  install git
+  shell: "{{ item }}"
   args:
     chdir: "/tmp/{{ git_dir }}"
   with_items:
     - make configure
     - >
       ./configure
-      --prefix=/usr/local
+      --prefix=/usr
     - make install
