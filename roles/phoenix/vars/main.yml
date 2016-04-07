@@ -3,3 +3,4 @@ user_home:        /home/{{ user_name }}
 elixir_url:       https://github.com/elixir-lang/elixir/releases/download/v{{ elixir_version }}/Precompiled.zip
 elixir_directory: "{{ user_home }}/elixir"
 phoenix_url:      https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+erlang_rpm_url:   http://packages.erlang-solutions.com/site/esl/esl-erlang/FLAVOUR_1_general/esl-erlang_18.1-1~centos~7_amd64.rpm

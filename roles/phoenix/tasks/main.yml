@@ -1,5 +1,5 @@
 ---
-- include: install_erlang.yml
-- include: install_elixir.yml
-- include: install_phoenix.yml
-- include: link_elixir_bin.yml
+- include: install-erlang.yml
+- include: install-elixir.yml
+- include: install-phoenix.yml
+- include: link-elixir-bin.yml

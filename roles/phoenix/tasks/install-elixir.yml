@@ -9,7 +9,7 @@
 
 - name: create Elixir directory
   file:
-    dest: "{{ elixir_directory }}"
+    dest:  "{{ elixir_directory }}"
     state: directory
 
 - name: extract Elixir
