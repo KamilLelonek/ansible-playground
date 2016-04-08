@@ -1,0 +1,6 @@
+---
+- name:    install CRON dependencies
+  package: name={{ item }}
+  with_items:
+    - cronie
+    - gzip

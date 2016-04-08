@@ -12,6 +12,7 @@
     - { role: ../roles/ruby,    tags: ['ruby']    }
     - { role: ../roles/rails,   tags: ['rails']   }
     - { role: ../roles/sidekiq, tags: ['sidekiq'] }
+    - { role: ../roles/db-dump, tags: ['dump']    }
     - {
         role:         ../roles/github,
         user_ssh_key: ../files/ssh-keys/id_rsa,

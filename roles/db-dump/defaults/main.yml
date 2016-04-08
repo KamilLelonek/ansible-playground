@@ -1,0 +1,6 @@
+---
+days_to_keep: 6
+dump_dir:     /var/db_dumps
+databases_list:
+  - db
+  - db-staging

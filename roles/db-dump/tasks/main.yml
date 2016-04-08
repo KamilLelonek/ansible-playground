@@ -1,0 +1,4 @@
+---
+- include: install-packages.yml
+- include: copy-files.yml
+- include: schedule-cron.yml
