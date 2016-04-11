@@ -4,4 +4,3 @@
     name:         "Backup PostgreSQL database"
     job:          /etc/cron.d/pg_backup.sh
     special_time: daily
-  notify: restart cron
