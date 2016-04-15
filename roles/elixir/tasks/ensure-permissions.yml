@@ -1,0 +1,6 @@
+---
+- name: make sure erlang cookie is only readable and writable by owner
+  file:
+    path: "{{ user_home }}/.erlang.cookie"
+    mode: 0600
+  ignore_errors: yes

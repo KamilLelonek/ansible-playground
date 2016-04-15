@@ -13,6 +13,7 @@
     - { role: ../roles/rails,   tags: ['rails']   }
     - { role: ../roles/sidekiq, tags: ['sidekiq'] }
     - { role: ../roles/db-dump, tags: ['dump']    }
+    - { role: ../roles/elixir,  tags: ['elixir']  }
     - {
         role:         ../roles/github,
         user_ssh_key: ../files/ssh-keys/id_rsa,

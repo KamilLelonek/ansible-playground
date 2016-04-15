@@ -1,7 +1,7 @@
 ---
 - name:          remove existing Erlang packages
   shell:         rpm -qa | grep erlang | xargs rpm -e
-  ignore_errors: true
+  ignore_errors: yes
 
 - name:    add Erlang Solutions repository
   package: name={{ erlang_rpm_url }}

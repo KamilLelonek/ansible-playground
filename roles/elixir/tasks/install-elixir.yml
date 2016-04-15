@@ -1,6 +1,6 @@
 ---
-- name: install unzip tool
-  yum: name=unzip
+- name:    install unzip tool
+  package: name=unzip
 
 - name: download precompiled Elixir
   get_url:
@@ -16,4 +16,4 @@
   unarchive:
     src:  /tmp/Precompiled.zip
     dest: "{{ elixir_directory }}"
-    copy: false
+    copy: no
