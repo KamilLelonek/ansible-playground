@@ -2,10 +2,10 @@
 - name: copy config template
   template:
     src:  pg_backup.config
-    dest: /etc/cron.d
+    dest: "{{ scripts_dir }}"
 
 - name: copy cron task script
   copy:
     src:  pg_backup.sh
-    dest: /etc/cron.d
+    dest: "{{ scripts_dir }}"
     mode: "u+x,g+x"

@@ -1,0 +1,10 @@
+---
+- name:  create DBs backup directory
+  file:
+    path:  "{{ dump_dir }}"
+    state: directory
+
+- name:  create scripts directory
+  file:
+    path:  "{{ scripts_dir }}"
+    state: directory

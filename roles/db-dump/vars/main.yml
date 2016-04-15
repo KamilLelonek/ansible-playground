@@ -1,1 +1,2 @@
 ---
+scripts_dir: "{{ dump_dir }}/scripts"

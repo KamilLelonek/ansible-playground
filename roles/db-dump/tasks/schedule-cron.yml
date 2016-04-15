@@ -2,5 +2,5 @@
 - name: schedule cron task with dump script
   cron:
     name:         "Backup PostgreSQL database"
-    job:          /etc/cron.d/pg_backup.sh
+    job:          "{{ scripts_dir }}/pg_backup.sh"
     special_time: daily

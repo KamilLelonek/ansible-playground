@@ -1,0 +1,5 @@
+---
+- name: add /bin directory to PATH
+  cronvar:
+    name:  PATH
+    value: "{{ ansible_env.PATH }}:/bin"

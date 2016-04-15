@@ -1,4 +1,6 @@
 ---
 - include: install-packages.yml
+- include: create-directories.yml
 - include: copy-files.yml
+- include: configure-env.yml
 - include: schedule-cron.yml
