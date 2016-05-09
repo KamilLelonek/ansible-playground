@@ -1,0 +1,7 @@
+---
+- name: add nginx remote repo
+  yum:  name={{ nginx_repo }}
+
+- name:   install nginx
+  yum:    name=nginx
+  notify: start nginx

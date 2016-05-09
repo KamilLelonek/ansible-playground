@@ -1,0 +1,5 @@
+- name: copy nginx configuration
+  copy:
+    src:  nginx.conf
+    dest: /etc/nginx/
+  notify: restart nginx

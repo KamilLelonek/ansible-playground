@@ -1,0 +1,30 @@
+---
+- name: create nginx sites directory
+  file:
+    path:  /etc/nginx/{{ item }}
+    state: directory
+    owner: root
+    mode:  0755
+  with_items:
+    - sites-available
+    - sites-enabled
+
+- name:     check for SSL certs directories
+  status:   dir_path=/etc/ssl/certs
+  register: certs_dir
+
+- name: create SSL directories
+  file:
+    dest:  /etc/ssl/certs
+    state: directory
+  when: certs_dir.missing
+
+- name:     check for SSL private directories
+  status:   dir_path=/etc/ssl/private
+  register: private_dir
+
+- name: create SSL directories
+  file:
+    dest:  /etc/ssl/private
+    state: directory
+  when: private_dir.missing
