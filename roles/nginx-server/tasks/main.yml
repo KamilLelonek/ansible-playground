@@ -1,4 +1,4 @@
 ---
-- include: install_packages.yml
-- include: create_directories.yml
-- include: copy_nginx_configuration.yml
+- include: install-packages.yml
+- include: create-directories.yml
+- include: copy-nginx-configuration.yml

@@ -1,3 +1,0 @@
-- name:     copy nginx configuration
-  template: src=nginx.conf dest=/etc/nginx/
-  notify:   restart nginx
