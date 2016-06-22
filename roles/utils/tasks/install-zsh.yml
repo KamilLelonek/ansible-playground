@@ -1,0 +1,12 @@
+---
+- name:     check for oh-my-zsh installation
+  status:   dir_path=/root/.oh-my-zsh
+  register: zsh_installation
+
+- block:
+  - name: install zsh package
+    yum:  name=zsh
+
+  - name:  install ohmyzsh
+    shell: curl -L http://install.ohmyz.sh | sh
+  when:  zsh_installation.missing

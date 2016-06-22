@@ -1,4 +1,4 @@
 ---
-- include: install_packages.yml
-- include: install_vim.yml
-- include: install_zsh.yml
+- include: install-packages.yml
+- include: install-vim.yml
+- include: install-zsh.yml

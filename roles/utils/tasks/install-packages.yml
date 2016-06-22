@@ -1,11 +1,10 @@
 ---
 - name: add RHEL EPEL repository
-  yum:  name=https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
+  yum:  name={{epel_url}}
 
 - name: install common packages
   yum:  name={{ item }}
   with_items:
     - git
-    - curl
-    - htop
     - ruby
+    - epel-release
