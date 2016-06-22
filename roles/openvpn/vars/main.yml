@@ -1,0 +1,4 @@
+---
+openvpn_config_file:            "openvpn_{{ openvpn_proto }}_{{ openvpn_port }}"
+openvpn_config_path:            "/etc/openvpn/{{ openvpn_config_file }}.conf"
+openvpn_suggested_service_name: "openvpn@{{ openvpn_config_file }}.service"

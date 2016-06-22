@@ -1,0 +1,35 @@
+---
+- name: enable OpenVPN Port (firewalld)
+  firewalld:
+    port:      {{ openvpn_port }}/{{ openvpn_proto }}
+    state:     enabled
+    permanent: yes
+    zone:      {{ firewalld_default_interface_zone }}
+    immediate: yes
+
+- name:    set tun0 interface to internal
+  command: firewall-cmd --zone=internal --change-interface=tun0
+
+- name:    persist tun0 settings
+  command: firewall-cmd --zone=internal --change-interface=tun0 --permanent
+
+- name:    set default interface to external
+  command: firewall-cmd --zone={{ firewalld_default_interface_zone }} --change-interface={{ ansible_default_ipv4.interface }}
+
+- name:    persist default interface to external
+  command: firewall-cmd --zone={{ firewalld_default_interface_zone }} --change-interface={{ ansible_default_ipv4.interface }} --permanent
+
+- name:    enable masquerading on external zone
+  command: firewall-cmd --zone={{ firewalld_default_interface_zone }} --add-masquerade
+
+- name: check if ifcfg-{{ ansible_default_ipv4.interface }} exists
+  stat:
+    path: /etc/sysconfig/network-scripts/ifcfg-{{ ansible_default_ipv4.interface }}
+  register: ifcfg
+
+- name: persist default interface in ifcfg file
+  lineinfile:
+    dest:   /etc/sysconfig/network-scripts/ifcfg-{{ ansible_default_ipv4.interface }}
+    regexp: "^ZONE="
+    line:   "ZONE={{ firewalld_default_interface_zone }}"
+  when: ifcfg.stat.exists

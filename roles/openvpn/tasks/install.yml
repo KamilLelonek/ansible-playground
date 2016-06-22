@@ -1,0 +1,7 @@
+---
+- include: setup-server-keys.yml
+- include: enable-ipv4-forwarding.yml
+- include: add-port-rules.yml
+- include: configure.yml
+- include: generate-client-configs.yml
+  when:    clients is defined

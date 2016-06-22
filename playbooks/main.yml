@@ -15,6 +15,11 @@
     - { role: ../roles/vertx,             tags: ['common', 'vertx']     }
     - { role: ../roles/authorized-access, tags: ['common', 'auth']      }
     - { role: ../roles/clojure-leiningen, tags: ['common', 'leiningen'] }
+    - {
+        role:    ../roles/openvpn,
+        clients: ['kamil@lelonek.me'],
+        tags:    ['common', 'openvpn']
+      }
 
 - include: api.yml
 - include: website.yml

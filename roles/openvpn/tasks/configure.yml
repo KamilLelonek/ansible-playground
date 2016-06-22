@@ -1,0 +1,24 @@
+---
+- name: set openvpn service name - systemd
+  set_fact:
+    openvpn_service_name: "{{ openvpn_suggested_service_name }}"
+  when: ansible_service_mgr == "systemd"
+
+- name: create openvpn config file
+  template:
+    src:  server.conf.j2
+    dest: "{{ openvpn_config_path }}"
+  notify:
+    - restart openvpn
+
+- name: copy openvpn logrotate config file
+  copy:
+    src:  openvpn_logrotate.conf
+    dest: "{{ logrotate_config_file }}"
+    mode: 0400
+
+- name: setup openvpn auto-start & start
+  service:
+    name:    "{{ openvpn_service_name }}"
+    enabled: yes
+    state:   started

@@ -1,0 +1,14 @@
+---
+- name: install openvpn
+  package:
+   name: "{{ item }}"
+  with_items:
+    - epel-release
+    - openvpn
+    - openssl
+
+- name: ensure group 'nogroup' is present
+  group:
+    name:   nogroup
+    state:  present
+    system: yes
