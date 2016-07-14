@@ -1,0 +1,7 @@
+---
+- name: symlink correct timezone file
+  file:
+    src:   "{{ timezone_source }}"
+    dest:  "{{ timezone_target }}"
+    state: link
+    force: yes
