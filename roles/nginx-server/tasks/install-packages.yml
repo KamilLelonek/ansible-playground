@@ -1,7 +1,7 @@
 ---
-- name: add nginx remote repo
-  yum:  name={{ nginx_repo }}
+- name:    add nginx remote repo
+  package: name={{ nginx_repo }}
 
-- name:   install nginx
-  yum:    name=nginx
-  notify: start nginx
+- name:    install nginx
+  package: name=nginx
+  notify:  start nginx
