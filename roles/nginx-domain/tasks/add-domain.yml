@@ -1,0 +1,5 @@
+---
+- name: copy a specific template based on a domain kind
+  template:
+    src:  sites-available-{{ kind }}.j2
+    dest: /etc/nginx/sites-available/{{ webserver_name }}

@@ -1,0 +1,8 @@
+---
+- name: create directories for nginx subdomains config files
+  file:
+    path:  "{{ item }}"
+    state: directory
+  with_items:
+   - /etc/nginx/sites-available
+   - /etc/nginx/sites-enabled

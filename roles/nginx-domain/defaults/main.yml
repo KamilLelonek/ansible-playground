@@ -1,3 +1,6 @@
 ---
-port:             3000
-passwd_file_path: /etc/nginx/passwdfile
+port:                     3000
+passwd_file_path:         /etc/nginx/passwdfile
+ssl_certs_dir:            ../../files/ssl-certificates
+ssl_certificate_path_key: /etc/ssl/private/server.key
+ssl_certificate_path_crt: /etc/ssl/certs/server.crt

@@ -1,8 +1,0 @@
----
-- name:     copy html template
-  template: src=sites-available-static.j2 dest=/etc/nginx/sites-available/{{ webserver_name }}
-  when:     kind is defined and kind == 'html'
-
-- name:     copy server template
-  template: src=sites-available-dynamic.j2 dest=/etc/nginx/sites-available/{{ webserver_name }}
-  when:     kind is defined and kind == 'server'

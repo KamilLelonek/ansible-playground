@@ -1,0 +1,7 @@
+---
+- name: symlink sites-available to sites-enabled
+  file:
+    src:   /etc/nginx/sites-available/{{ subdomain_name }}
+    dest:  /etc/nginx/sites-enabled/{{ subdomain_name }}
+    state: link
+  notify: restart nginx

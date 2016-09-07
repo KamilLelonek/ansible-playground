@@ -1,19 +1,9 @@
 {% include 'rewrite-redirect-rules.j2' %}
 
-
 server {
 {% include 'sites-server-port.j2' %}
 
   root /home/{{ user_name }}/app/current/public;
-
-  location ~ ^/(assets|images|javascripts|stylesheets|fonts)/ {
-    gzip_static   on;
-    expires       max;
-    add_header    Cache-Control public;
-    add_header    Last-Modified "";
-    add_header    ETag "";
-    log_not_found off;
-  }
 
   try_files $uri @app;
 
