@@ -6,7 +6,7 @@
 
 - name: configure vertx
   replace:
-    dest: '{{ vertex_dir }}/conf/cluster.xml'
+    dest:    '{{ vertex_dir }}/conf/cluster.xml'
     regexp:  '{{ item.regexp }}'
     replace: '{{ item.replacement }}'
   with_items:
