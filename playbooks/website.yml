@@ -1,7 +1,7 @@
 ---
 - hosts:        all
   gather_facts: yes
-  sudo:         yes
+  become:       yes
   vars:
     user_name: website
   vars_files:
@@ -22,7 +22,6 @@
         role:            ../../roles/nginx-domain,
         tags:            ['domain'],
         subdomain:       website,
-        kind:            html,
-        prerender_token: '',
-        tags:            ['nginx']
+        kind:            static,
+        prerender_token: ''
       }

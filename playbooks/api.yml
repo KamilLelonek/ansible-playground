@@ -1,7 +1,7 @@
 ---
 - hosts:        all
   gather_facts: yes
-  sudo:         yes
+  become:       yes
   vars:
     user_name: api
   vars_files:
@@ -23,5 +23,5 @@
         role:      ../roles/nginx-domain,
         tags:      ['domain'],
         subdomain: api,
-        kind:      server
+        kind:      dynamic
       }

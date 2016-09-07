@@ -1,6 +1,6 @@
 ---
-- name: download ssh keys
-  sudo: false
+- name:         download ssh keys
+  become:       false
   local_action: get_url
                 url=https://github.com/{{ item }}.keys
                 dest=/tmp/{{ item }}
