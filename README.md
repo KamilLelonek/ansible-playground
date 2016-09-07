@@ -49,10 +49,10 @@ and any subdomain.
 
 If you want to modify ansible command, for example by providing tag names you can use `test.sh` script for that.
 
-    ./scripts/test.sh --tags=common,postgres
+    ./scripts/test.sh [--tags=...]
 
 ### Producion
 
 To deploy infrastructure on production server run:
 
-    ./scripts/deploy.rb [playbook_name]
+    ./scripts/production.sh [--tags=...]
