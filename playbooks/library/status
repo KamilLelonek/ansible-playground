@@ -14,6 +14,7 @@ File.open(ARGV[0]) do |arguments_stream|
 
     result = {
       exists:    exists,
+      missing:   !exists,
       directory: directory,
       empty:     empty
     }
