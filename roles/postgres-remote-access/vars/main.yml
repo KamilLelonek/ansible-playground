@@ -1,0 +1,4 @@
+---
+path_postgres_data:   /var/lib/pgsql/{{ postgres_version }}/data
+path_postgresql_conf: "{{ path_postgres_data }}/postgresql.conf"
+path_pg_hba_conf:     "{{ path_postgres_data }}/pg_hba.conf"

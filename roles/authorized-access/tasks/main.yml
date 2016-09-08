@@ -4,10 +4,10 @@
   local_action: get_url
                 url=https://github.com/{{ item }}.keys
                 dest=/tmp/{{ item }}
-  with_items: developers
+  with_items: "{{ developers }}"
 
 - name: add ssh developers keys
   authorized_key:
     user: "{{ user_name | default('root') }}"
     key:  "{{ lookup('file', '/tmp/' + item) }}"
-  with_items: developers
+  with_items: "{{ developers }}"

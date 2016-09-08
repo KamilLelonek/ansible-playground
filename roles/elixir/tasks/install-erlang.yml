@@ -3,5 +3,5 @@
   shell:         rpm -qa | grep erlang | xargs rpm -e
   ignore_errors: yes
 
-- name:    add Erlang Solutions repository
-  package: name={{ erlang_rpm_url }}
+- name: add Erlang Solutions repository
+  yum:  name={{ erlang_rpm_url }}

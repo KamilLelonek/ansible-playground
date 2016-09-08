@@ -1,0 +1,3 @@
+postgres_readonly_username: readonly
+postgres_readonly_password: readonly
+postgres_readonly_database: readonly

@@ -2,4 +2,4 @@
 - name:    rebuild SASS dependency
   command: npm rebuild libsass
   environment:
-    PATH: /home/{{ user_name }}/nodejs/bin
+    PATH: "{{ ansible_env.PATH }}:/home/{{ user_name }}/nodejs/bin"

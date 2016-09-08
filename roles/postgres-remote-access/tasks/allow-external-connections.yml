@@ -1,0 +1,13 @@
+---
+- name: listen on all addresses
+  lineinfile:
+    dest:   "{{ path_postgresql_conf }}"
+    regexp: "^#listen_addresses"
+    line:   "listen_addresses = '*'"
+  notify: restart postgres
+
+- name: accept all hosts
+  lineinfile:
+    dest: "{{ path_pg_hba_conf }}"
+    line: "host    all         all         0.0.0.0/0             md5"
+  notify: restart postgres

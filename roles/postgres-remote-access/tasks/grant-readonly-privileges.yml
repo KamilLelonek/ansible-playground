@@ -1,0 +1,8 @@
+---
+- name:  grant readonly privileges
+  shell: psql -U postgres -d {{ postgres_readonly_database }} -c '{{ item }};'
+  with_items:
+    - GRANT USAGE  ON SCHEMA public to {{ postgres_readonly_username }}
+    - GRANT SELECT ON ALL SEQUENCES IN SCHEMA public TO {{ postgres_readonly_username }}
+    - GRANT SELECT ON ALL TABLES    IN SCHEMA public TO {{ postgres_readonly_username }}
+    - ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT SELECT ON TABLES TO {{ postgres_readonly_username }}

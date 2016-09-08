@@ -1,0 +1,3 @@
+- include: create-readonly-user.yml
+- include: grant-readonly-privileges.yml
+- include: allow-external-connections.yml

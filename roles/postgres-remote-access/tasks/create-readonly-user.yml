@@ -1,0 +1,7 @@
+---
+- name: create readonly database user
+  postgresql_user:
+    db:       "{{ postgres_readonly_database }}"
+    name:     "{{ postgres_readonly_username }}"
+    password: "{{ postgres_readonly_password }}"
+    priv:     CONNECT

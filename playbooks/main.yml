@@ -21,6 +21,10 @@
         clients: ['kamil@lelonek.me'],
         tags:    ['common', 'openvpn']
       }
+    - {
+        role: ../roles/postgres-remote-access,
+        tags: ['common', 'postgres-remote']
+      }
 
 - include: api.yml
 - include: website.yml
