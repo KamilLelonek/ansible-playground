@@ -16,6 +16,7 @@
     - { role: ../roles/vertx,             tags: ['common', 'vertx']     }
     - { role: ../roles/authorized-access, tags: ['common', 'auth']      }
     - { role: ../roles/clojure-leiningen, tags: ['common', 'leiningen'] }
+    - { role: ../roles/wordpress,         tags: ['common', 'wordpress'] }
     - {
         role:    ../roles/openvpn,
         clients: ['kamil@lelonek.me'],

@@ -1,0 +1,6 @@
+---
+wordpress_directory:    /srv
+wordpress_archive_name: wordpress-{{ wp_version }}.tar.gz
+wordpress_archive_file: "{{ wordpress_directory }}/{{ wordpress_archive_name }}"
+wordpress_url:          https://wordpress.org/{{ wordpress_archive_name }}
+wordpress_path:         "{{ wordpress_directory }}/wordpress/"

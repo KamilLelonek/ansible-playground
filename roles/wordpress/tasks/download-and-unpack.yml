@@ -1,0 +1,20 @@
+---
+- name:    download WordPress archive
+  get_url:
+    url:  "{{ wordpress_url }}"
+    dest: "{{ wordpress_archive_file }}"
+
+- name: create WordPress path
+  file:
+    path:  "{{ wordpress_path }}"
+    state: directory
+    owner: "{{ user_name }}"
+    group: deployers
+
+- name: unpack downloaded archive
+  unarchive:
+    copy:  no
+    src:   "{{ wordpress_archive_file }}"
+    dest:  "{{ wordpress_directory }}"
+    owner: "{{ user_name }}"
+    group: deployers

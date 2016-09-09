@@ -1,0 +1,4 @@
+---
+- include: download-and-unpack.yml
+- include: copy-template.yml
+- include: create-directories.yml

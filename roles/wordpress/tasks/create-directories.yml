@@ -1,0 +1,8 @@
+---
+- name: create uploads directory
+  file:
+    path:  "{{ wordpress_path }}/wp-content/uploads"
+    state: directory
+    mode:  0755
+    group: nginx
+    user:  nginx
