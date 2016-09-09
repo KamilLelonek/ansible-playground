@@ -5,4 +5,4 @@
     state: directory
     mode:  0755
     group: nginx
-    user:  nginx
+    owner: nginx
