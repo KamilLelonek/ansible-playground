@@ -21,7 +21,7 @@
     - {
         role:            ../../roles/nginx-domain,
         tags:            ['domain'],
-        subdomain:       website,
+        subdomain:       ~,
         kind:            static,
-        prerender_token: ''
+        prerender_token: 'abc123'
       }
