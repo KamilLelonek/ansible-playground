@@ -4,19 +4,20 @@
   become:       yes
   vars_files:
     - ../vars/developers.yml
+    - ../vars/domains.yml
   roles:
-    - { role: ../roles/utils,             tags: ['common', 'utils']     }
-    - { role: ../roles/git,               tags: ['common', 'git']       }
-    - { role: ../roles/swap,              tags: ['common', 'swap']      }
-    - { role: ../roles/nginx-server,      tags: ['common', 'nginx']     }
-    - { role: ../roles/postgres,          tags: ['common', 'postgres']  }
-    - { role: ../roles/timezone,          tags: ['common', 'timezone']  }
-    - { role: ../roles/redis,             tags: ['common', 'redis']     }
-    - { role: ../roles/mongodb,           tags: ['common', 'mongodb']   }
-    - { role: ../roles/vertx,             tags: ['common', 'vertx']     }
-    - { role: ../roles/authorized-access, tags: ['common', 'auth']      }
-    - { role: ../roles/clojure-leiningen, tags: ['common', 'leiningen'] }
-    - { role: ../roles/wordpress,         tags: ['common', 'wordpress'] }
+    - { role: ../roles/utils,             tags: ['common', 'utils']       }
+    - { role: ../roles/git,               tags: ['common', 'git']         }
+    - { role: ../roles/swap,              tags: ['common', 'swap']        }
+    - { role: ../roles/nginx-server,      tags: ['common', 'nginx']       }
+    - { role: ../roles/postgres,          tags: ['common', 'postgres']    }
+    - { role: ../roles/timezone,          tags: ['common', 'timezone']    }
+    - { role: ../roles/redis,             tags: ['common', 'redis']       }
+    - { role: ../roles/mongodb,           tags: ['common', 'mongodb']     }
+    - { role: ../roles/vertx,             tags: ['common', 'vertx']       }
+    - { role: ../roles/authorized-access, tags: ['common', 'auth']        }
+    - { role: ../roles/clojure-leiningen, tags: ['common', 'leiningen']   }
+    - { role: ../roles/letsencrypt,       tags: ['common', 'letsencrypt'] }
     - {
         role:    ../roles/openvpn,
         clients: ['kamil@lelonek.me'],
@@ -29,3 +30,4 @@
 
 - include: api.yml
 - include: website.yml
+- include: blog.yml
