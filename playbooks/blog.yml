@@ -1,0 +1,16 @@
+---
+- hosts:        all
+  gather_facts: yes
+  become:       yes
+  vars:
+    user_name: wordpress
+  vars_files:
+    - ../vars/domains.yml
+  roles:
+    - { role: ../roles/users,     tags: ['users']     }
+    - { role: ../roles/wordpress, tags: ['wordpress'] }
+    - {
+        role:         ../roles/github,
+        user_ssh_key: ../files/ssh-keys/id_rsa,
+        tags:         ['github']
+      }
