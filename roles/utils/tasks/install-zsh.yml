@@ -4,8 +4,8 @@
   register: zsh_installation
 
 - block:
-  - name: install zsh package
-    yum:  name=zsh
+  - name:    install zsh package
+    package: name=zsh
 
   - name:  install ohmyzsh
     shell: curl -L http://install.ohmyz.sh | sh

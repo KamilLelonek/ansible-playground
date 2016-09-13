@@ -1,6 +1,6 @@
 ---
-- name: install vim package
-  yum:  name=vim
+- name:    install vim package
+  package: name=vim
 
 - name: configure vim
   copy:

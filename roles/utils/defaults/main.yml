@@ -1,2 +1,4 @@
 ---
-epel_url: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+repos_url:
+  - https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+  - https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm

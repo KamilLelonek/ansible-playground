@@ -1,9 +1,10 @@
 ---
-- name: add RHEL EPEL repository
-  yum:  name={{epel_url}}
+- name:       add RHEL EPEL repository
+  yum:        name={{epel_url}}
+  with_items: "{{ repos_url }}"
 
-- name: install common packages
-  yum:  name={{ item }}
+- name:    install common packages
+  package: name={{ item }}
   with_items:
     - git
     - ruby
