@@ -1,3 +1,3 @@
 ---
-- name: Install JDK
-  yum:  name=java-{{ java_version }}-openjdk
+- name:    Install JDK
+  package: name=java-{{ java_version }}-openjdk
