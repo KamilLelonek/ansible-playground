@@ -1,0 +1,7 @@
+---
+- include: install-packages.yml
+- include: create-directories.yml
+- include: clone-certbot.yml
+- include: create-cron-task.yml
+- include: configure-nginx.yml
+- include: generate-certificates.yml

@@ -1,0 +1,11 @@
+---
+- name: create cron task for certificate renewal
+  cron:
+    name: renew letsencrypt certificates
+    job: >
+      {{ certbot_dir }}/certbot-auto renew
+      --standalone
+      --pre-hook  "service nginx stop"
+      --post-hook "service nginx start"
+      --quiet
+    special_time: monthly

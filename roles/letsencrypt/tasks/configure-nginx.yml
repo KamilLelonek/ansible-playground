@@ -1,0 +1,16 @@
+---
+- name: copy nginx template
+  template:
+    src:  letsencrypt.conf
+    dest: /etc/nginx/sites-available
+
+- name: include nginx location
+  lineinfile:
+    dest:         /etc/nginx/sites-available/{{ webserver_name }}
+    insertbefore: "location / {"
+    line:         "include /etc/nginx/sites-available/letsencrypt.conf;"
+
+- name: restart nginx
+  service:
+    name:  nginx
+    state: restarted

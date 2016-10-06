@@ -1,0 +1,27 @@
+---
+- name: update yum
+  yum:
+    name:  "*"
+    state: latest
+
+- name:    install certbot dependencies
+  package: name={{ item }}
+  with_items:
+    - git
+    - gcc
+    - dialog
+    - augeas-libs
+    - python-pip
+    - openssl
+    - openssl-devel
+    - libffi-devel
+    - redhat-rpm-config
+    - ca-certificates
+    - python
+    - python-devel
+    - python-virtualenv
+    - python-tools
+    - python-pip
+
+- name: install Python cryptography module
+  pip:  name=cryptography

@@ -1,0 +1,4 @@
+---
+certbot_dir:    "{{ certbot_root }}/repo"
+certs_dir:      "/etc/letsencrypt/live/{{ subdomain }}/"
+webserver_name: "{{ [subdomain, domain] | reject('none') | join('.') }}"

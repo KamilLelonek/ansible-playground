@@ -1,0 +1,10 @@
+---
+- name: generate certs
+  shell: >
+    {{ certbot_dir }}/certbot-auto certonly
+    --webroot
+    --webroot-path {{ certbot_root }}
+    --domains {{ webserver_name }},www.{{ webserver_name }}
+    --email {{ email }}
+    --non-interactive
+    --agree-tos

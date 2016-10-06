@@ -1,0 +1,10 @@
+---
+- name: create certboot directories
+  file:
+    state:   directory
+    path:    "{{ item }}"
+    recurse: yes
+    mode:    0755
+  with_items:
+    - "{{ certbot_root }}/{{ challenge_path }}"
+    - /var/log/letsencrypt

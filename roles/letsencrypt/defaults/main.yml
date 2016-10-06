@@ -1,0 +1,4 @@
+---
+certbot_repo:   https://github.com/certbot/certbot
+certbot_root:   /opt/certbot
+challenge_path: .well-known/acme-challenge
