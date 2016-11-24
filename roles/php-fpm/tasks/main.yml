@@ -1,0 +1,9 @@
+---
+- include: install-packages.yml
+- include: copy-templates.yml
+
+- name: start php-fpm
+  service:
+    name:    php-fpm
+    state:   started
+    enabled: yes

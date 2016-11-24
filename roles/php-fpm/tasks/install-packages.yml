@@ -1,0 +1,8 @@
+---
+- name:    install php-fpm and deps
+  package: name={{ item }}
+  with_items:
+    - php
+    - php-fpm
+    - php-mysql
+    - php-cli

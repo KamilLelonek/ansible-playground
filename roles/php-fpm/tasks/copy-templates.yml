@@ -1,0 +1,12 @@
+---
+- name: create required directories
+  file:
+    path:  wordpress_path
+    state: directory
+
+- name: copy php-fpm configuration
+  template:
+    src:  www.conf
+    dest: /etc/php-fpm.d/
+  notify:
+    - restart php-fpm
